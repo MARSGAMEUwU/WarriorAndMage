@@ -26,6 +26,12 @@ namespace WarriorAndMageProject
             currentPlayerClass = playerClass;
         }
 
+        public static bool EquipWeapon(Armor Armor)
+        {
+            Console.WriteLine("Нельзя экипировать броню в оружие");
+            return false;
+        }
+
         public static bool EquipWeapon(Weapon weapon)
         {
             if (weapon == null) return false;
@@ -44,6 +50,11 @@ namespace WarriorAndMageProject
             return true;
         }
 
+        public static bool EquipArmor(Weapon weapon)
+        {
+            Console.WriteLine("Нельзя экипировать оружие в броню");
+            return false;
+        }
         public static bool EquipArmor(Armor armor)
         {
             if (armor == null) return false;

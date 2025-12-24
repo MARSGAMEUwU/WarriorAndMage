@@ -19,17 +19,15 @@ namespace WarriorAndMageProject
 
 
 
-            Weapon warriorSword = new Weapon(1, "Меч воина", "Мощный меч для воина",
-                bonusDamage: 10, bonusStrength: 5, requiredClass: CharacterClass.Warrior);
+            Weapon warriorSword = new Weapon(1, "Меч воина", "Мощный меч для воина", bonusDamage: 10, bonusStrength: 5, requiredClass: CharacterClass.Warrior);
 
-            Armor warriorHelmet = new Armor(1, "Шлем воина", "Прочный шлем",
-                ArmorType.Head, defense: 5, bonusStrength: 2, requiredClass: CharacterClass.Warrior);
+            Armor warriorHelmet = new Armor(1, "Шлем воина", "Прочный шлем",ArmorType.Head, defense: 5, bonusStrength: 2, requiredClass: CharacterClass.Warrior);
 
-            Armor strengthRing = new Armor(1, "Кольцо силы", "Увеличивает силу",
-                ArmorType.Ring, bonusStrength: 3, requiredClass: CharacterClass.Any);
+            Armor strengthRing = new Armor(1, "Кольцо силы", "Увеличивает силу",ArmorType.Ring, bonusStrength: 3, requiredClass: CharacterClass.Any);
 
 
 
+            EquipmentManager.EquipWeapon(warriorSword);
             EquipmentManager.EquipWeapon(warriorSword);
             EquipmentManager.EquipArmor(warriorHelmet);
             EquipmentManager.EquipArmor(strengthRing);
@@ -42,10 +40,17 @@ namespace WarriorAndMageProject
             Console.WriteLine("\nЭкипирую предмет не того класса", Console.ForegroundColor = ConsoleColor.Yellow);
             Console.ForegroundColor = ConsoleColor.White;
             Weapon mageStaff = new Weapon(1, "Посох мага", "Магический посох", bonusDamage: 5, bonusIntelligence: 10, requiredClass: CharacterClass.Mage);
-
-
-
             EquipmentManager.EquipWeapon(mageStaff);
+
+            Console.WriteLine("\nЭкипирую предмет не того слота", Console.ForegroundColor = ConsoleColor.Yellow);
+            Console.ForegroundColor = ConsoleColor.White;
+            EquipmentManager.EquipArmor(warriorSword);
+
+            Console.WriteLine("\nПытаюсь экипировать лишнего(только кольца, остальное снимается сразу, потому что в единственном экземпляре", Console.ForegroundColor = ConsoleColor.Yellow);
+            Console.ForegroundColor = ConsoleColor.White;
+            EquipmentManager.EquipArmor(strengthRing);
+            EquipmentManager.EquipArmor(strengthRing);
+
 
             Console.WriteLine("\n            МАГ", Console.ForegroundColor = ConsoleColor.Blue);
             Console.ForegroundColor = ConsoleColor.White;
