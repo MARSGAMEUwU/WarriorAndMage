@@ -12,11 +12,13 @@ namespace WarriorAndMageProject
         private int intelligence;
         private const int intelligenceMultiplier = 5;
 
-        public Mage(int maxHealth, int baseDamage, int intelligence, string name, Inventory inventory) : base(maxHealth, baseDamage, name, inventory)
+        public Mage(int maxHealth, int baseDamage, int intelligence, string name, Inventory inventory)
+    : base(maxHealth, baseDamage, name, inventory)
         {
             mana = 0;
             this.intelligence = intelligence;
             this.baseDamage = baseDamage + intelligenceMultiplier * intelligence;
+            EquipmentManager.SetPlayerClass(CharacterClass.Mage);
         }
 
         public override void Attack()

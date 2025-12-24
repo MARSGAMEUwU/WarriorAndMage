@@ -12,11 +12,14 @@ namespace WarriorAndMageProject
         private int strength;
         private const int strengthMultiplier = 20;
 
-        public Warrior(int maxHealth, int baseDamage, int strength, string name, Inventory inventory) : base(maxHealth, baseDamage, name, inventory)
+        public Warrior(int maxHealth, int baseDamage, int strength, string name, Inventory inventory)
+    : base(maxHealth, baseDamage, name, inventory)
         {
             rage = 0;
             this.strength = strength;
             this.baseDamage = baseDamage + strengthMultiplier * strength;
+
+            EquipmentManager.SetPlayerClass(CharacterClass.Warrior);
         }
 
         public override void Attack()
